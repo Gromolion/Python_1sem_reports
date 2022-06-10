@@ -1,0 +1,46 @@
+#include <iostream>
+#include <random>
+
+using namespace std;
+
+int main()
+{
+    int n;
+    srand(time(NULL));
+    
+    cout << "Программе дается два списка длиной N.\nСформировать новый список С того же размера, каждый элемент которого равен максимальному из элементов списков A и B" << endl;
+    
+    cout << "Введите длину списков: ";
+    cin >> n;
+    
+    int list1[n];
+    int list2[n];
+    int list3[n];
+    
+    for (int i = 0; i < n; i++) {
+            list1[i] = 1 + rand() % 20;
+            list2[i] = 1 + rand() % 20;
+    }
+
+    cout << "Массивы: "<< endl;
+    for (int i = 0; i < n; ++i) {
+        cout << list1[i] << " ";
+    }
+    cout << endl;
+    for (int i = 0; i < n; ++i) {
+        cout << list2[i] << " ";
+    }
+    cout << endl;
+
+    for (int i = 0; i < n; ++i) {
+        list3[i] = list1[i] > list2[i] ? list1[i] : list2[i];
+    }
+    
+    cout << "Готовый массив: ";
+    for (int i = 0; i < n; ++i) {
+        cout << list3[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
