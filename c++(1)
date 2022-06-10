@@ -1,0 +1,50 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+#include <random>
+
+using namespace std;
+
+int main()
+{
+    int n;
+    int result;
+    srand(time(NULL));
+    
+    cout << "Введите длину списка: ";
+    cin >> n;
+    
+    int list[n];
+    
+    for (int i = 0; i < n; i++) {
+            list[i] = 1+ rand() % 20;
+    }
+
+    cout << "\nМассив: ";
+    for (int i = 0; i < n; ++i) {
+        cout << list[i] << " ";
+    }
+    cout << endl;
+
+    for (int i = 0; i < n; ++i) {
+        if (list[i-1] % 2 == list[i] % 2) {
+            result = i;
+            break;
+        }
+    }
+    
+    
+    if (result == 0) {
+        cout << 0;
+    } else {
+        cout << "Последовательность нарушилась на " << result << " элементе списка";
+    }
+
+    return 0;
+}
